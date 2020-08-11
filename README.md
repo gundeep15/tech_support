@@ -104,3 +104,6 @@ You are now set to use the cluster gpu on jupyter!!!
 **Step 3**: Enter the host name as rider.case.edu, specify the Login with your case ID, and keep the port to 22. 
 
 ![macstep3.png](https://github.com/gundeep15/tech_support/blob/master/macstep3.png | width=50)
+
+
+<img src="https://github.com/gundeep15/tech_support/blob/master/macstep3.png" alt="macstep3.png" width="80" height="100">
