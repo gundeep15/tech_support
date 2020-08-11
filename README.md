@@ -17,6 +17,8 @@ Requirements:
 
 ![windowsstep3.png](https://github.com/gundeep15/tech_support/blob/master/windowsstep3.png)
 
+Once you see the terminal screen, it would ask you to enter your password. Enter your CaseID password and press return. 
+
 Note: At this point you should be connected to Case Wireless to proceed further. In the terminal window on Mobaxterm, you should see the beginning of the command line as connected to the hpc (high performance computing) with a format like '[\<caseID>@hpc3 ~]$'
 
 **Step 4**: Request a gpu (or cpu) cluster node using the following command (or a version of it depending upon your requirements): 
@@ -63,7 +65,7 @@ Returning this command would result something as screenshot-ed below indicating 
 
 **Step 3**: Copy or note down the ip-address. 
 
-*Note: DO NOT USE Ctrl+C for copy. It would kill everything. The default command for copy/cut in linux is Ctrl+C*
+*Note: DO NOT USE Ctrl+C for copy. It would kill everything. The default command for copy/cut in linux is Ctrl+X*
 
 **Step 4**: **Start a new terminal window**. You can do that by either clicking on the (+) on the windows tab. or using the main tab 'Terminal -> Open new tab'. In the new tab, paste/type the following command with the copied id address:
 
@@ -103,7 +105,80 @@ You are now set to use the cluster gpu on jupyter!!!
 
 **Step 3**: Enter the host name as rider.case.edu, specify the Login with your case ID, and keep the port to 22. 
 
-![macstep3.png](https://github.com/gundeep15/tech_support/blob/master/macstep3.png | width=50)
+<img src="https://github.com/gundeep15/tech_support/blob/master/macstep3.png" alt="macstep3.png" height="400">
 
+Click on the session icon from the right column of the window to start the session you just created. Enter your CaseID password as requested. Returning would start a new desktop. Start a terminal window. 
 
-<img src="https://github.com/gundeep15/tech_support/blob/master/macstep3.png" alt="macstep3.png" height="500">
+Note: At this point you should be connected to Case Wireless to proceed further. In the terminal window on Mobaxterm, you should see the beginning of the command line as connected to the hpc (high performance computing) with a format like '[\<caseID>@hpc3 ~]$'
+
+**Step 4**: Request a gpu (or cpu) cluster node using the following command (or a version of it depending upon your requirements): 
+
+**srun --x11 -p gpu -C gpup100 --gres=gpu:1 -N 1 -c 2 --time=4:00:00 --mem=20gb --pty /bin/bash**
+
+With the above command, you will get the Tesla P100 gpu for a period of 4 hours with memory of 20gb.
+
+For a summary of resources available on the cluster, visit https://sites.google.com/a/case.edu/hpcc/servers-and-storage/cluster-resources
+
+Once you press return, your request is proceeded and you will see the command line change from '[\<caseID>@hpc3 ~]$' to '[\<caseID>@gpu\<node number> ~]$'
+
+![macstep4.png](https://github.com/gundeep15/tech_support/blob/master/macstep4.png)
+
+Voila! You have now obtained the GPU node.
+
+### Accessing Jupyter on cluster
+
+**Step 1**: Type or copy the following commands (separately followed by pressing return) to activate python on the cluster node.
+
+module swap intel gcc
+
+\<return>
+
+module load cuda/10.1
+
+\<return>
+
+module load python/3.7.0
+
+\<return>
+
+*Note: The default shortkey for paste in linux is a right click on the mouse.*
+
+![macstep5.png](https://github.com/gundeep15/tech_support/blob/master/macstep5.png)
+
+**Step 2**: specify the host for running the jupyter notebook on your browser using the following command:
+
+jupyter notebook --no-browser --ip=$(hostname -i) --port=9999
+
+Returning this command would result something as screenshot-ed below indicating the ip address and the corresponding token (password) where the jupyter notebook will be hosted:
+
+![macstep6.png](https://github.com/gundeep15/tech_support/blob/master/macstep6.png)
+
+**Step 3**: Copy or note down the ip-address. 
+
+*Note: DO NOT USE Ctrl+C for copy. It would kill everything. The default command for copy/cut in linux is Ctrl+X. Or you can right click on the selected text and select copy *
+
+**Step 4**: **Start a new terminal window**. You can do that by either clicking on the (+) on the windows tab. or using the main tab 'File -> New terminal'. In the new terminal, paste/type the following command with the copied id address:
+
+ssh -N -L 9999:<IP ADDRESS>:9999 <caseID>@rider.case.edu
+
+![jupyterstep3.png](https://github.com/gundeep15/tech_support/blob/master/jupyterstep3.png)
+
+**Step 5**: Open the ip-host on your preferred browser window using http://localhost:9999/tree
+
+**Step 6**: Copy the token and enter as requested on the browser window. *reminder: Ctrl+X for copy. NOT Ctrl+C.*
+
+The token code is specified after http://<IP ADDRESS>:9999/?token=<TOKEN to be copied and pasted into the browser window>
+
+**Step 7**: *almost there* Once you see the Jupyter directories, you have successfully accessed the jupyter connected via the cluster node. 
+
+Open a jupyter notebook, and in the notebook run the following, which should return "True":
+
+import tensorflow as tf
+
+tf.test.is_gpu_available() 
+
+**Step 8**: Finally, you would have to install packages as needed. But since this is hosted by the cluster, you do not have the permission to install packages to the whole server, but you can install them only for your user id. Check the packages already available for you using *!pip list*. For installing new packages, using commands like:
+
+**!pip install --user opencv-python**, where opencv-python is the package name.
+
+You are now set to use the cluster gpu on jupyter!!!
