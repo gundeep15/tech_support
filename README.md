@@ -21,13 +21,22 @@ Note: At this point you should be connected to Case Wireless to proceed further.
 
 With the above command, you will get the Tesla P100 gpu for a period of 4 hours with memory of 20gb.
 
-For a summary of resources available in the cluster, visit https://sites.google.com/a/case.edu/hpcc/servers-and-storage/cluster-resources
+For a summary of resources available on the cluster, visit https://sites.google.com/a/case.edu/hpcc/servers-and-storage/cluster-resources
 
-Once you press return, your request is proceeded and you will see the command line change from '[abc123@hpc3 ~]$' to '[abc123@gpu(node number) ~]$'
+Once you press return, your request is proceeded and you will see the command line change from '[abc123@hpc3 ~]$' to '[abc123@gpu\<node number> ~]$'
 
 ![windowsstep4.png](https://github.com/gundeep15/tech_support/blob/master/windowsstep4.png)
 
+Voila! You have now obtained the GPU node.
+
 ### Accessing Jupyter on cluster
+
+**Step 1**: Type or copy the following commands (separately) to activate python on the cluster node.
+
+module swap intel gcc
+\<return>
+module load python/3.7.0
+
 
 ## Mac:  
 Step 1: Download and install a client-server tool for remote access to the cluster. Recommended is [X2Go](https://wiki.x2go.org/doku.php) appropriate for your system. DMG link for [macOS 10.13 and higher](https://code.x2go.org/releases/X2GoClient_latest_macosx_10_13.dmg) 
