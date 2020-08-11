@@ -49,6 +49,8 @@ module load python/3.7.0
 
 \<return>
 
+*Note: The default shortkey for paste in linux is the right click on mouse.*
+
 ![jupyterstep1.png](https://github.com/gundeep15/tech_support/blob/master/jupyterstep1.png)
 
 ## Mac:  
