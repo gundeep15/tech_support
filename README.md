@@ -69,7 +69,7 @@ Returning this command would result something as screenshot-ed below indicating 
 
 **Step 4**: **Start a new terminal window**. You can do that by either clicking on the (+) on the windows tab. or using the main tab 'Terminal -> Open new tab'. In the new tab, paste/type the following command with the copied id address:
 
-ssh -N -L 9999:<IP ADDRESS>:9999 <caseID>@rider.case.edu
+ssh -N -L 9999:\<IP ADDRESS>:9999 <caseID>@rider.case.edu
 
 ![jupyterstep3.png](https://github.com/gundeep15/tech_support/blob/master/jupyterstep3.png)
 
@@ -159,7 +159,7 @@ Returning this command would result something as screenshot-ed below indicating 
 
 **Step 4**: **Start a new terminal window**. You can do that by either clicking on the (+) on the windows tab. or using the main tab 'File -> New terminal'. In the new terminal, paste/type the following command with the copied id address:
 
-ssh -N -L 9999:<IP ADDRESS>:9999 <caseID>@rider.case.edu
+ssh -N -L 9999:\<IP ADDRESS>:9999 <caseID>@rider.case.edu
 
 ![jupyterstep3.png](https://github.com/gundeep15/tech_support/blob/master/jupyterstep3.png)
 
