@@ -14,7 +14,7 @@ Step 3: Enter the host name as rider.case.edu, specify the username with your ca
 
 ![windowsstep3.png](https://github.com/gundeep15/tech_support/blob/master/windowsstep3.png)
 
-Note: At this point you should be connected to Case Wireless to proceed further. In the terminal window on Mobaxterm, you should see the beginning of the command line as connected to the hpc (high performance computing) with a format like '[<caseID>@hpc3 ~]$'
+Note: At this point you should be connected to Case Wireless to proceed further. In the terminal window on Mobaxterm, you should see the beginning of the command line as connected to the hpc (high performance computing) with a format like '[abc123@hpc3 ~]$'
 
 
 Step 4: Request  
