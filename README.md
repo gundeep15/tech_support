@@ -1,4 +1,8 @@
-Requirements: 1. Connected to Case Wireless Network, 2. Added to cluster by the group leader (in this case, Mike) who has already purchased cluster access for their group
+Requirements: 
+
+1. Connected to Case Wireless Network, 
+
+2. Added to cluster by the group leader (in this case, Mike) who has already purchased cluster access for their group
 
 ## Windows:
 
@@ -13,7 +17,7 @@ Requirements: 1. Connected to Case Wireless Network, 2. Added to cluster by the 
 
 ![windowsstep3.png](https://github.com/gundeep15/tech_support/blob/master/windowsstep3.png)
 
-Note: At this point you should be connected to Case Wireless to proceed further. In the terminal window on Mobaxterm, you should see the beginning of the command line as connected to the hpc (high performance computing) with a format like '[abc123@hpc3 ~]$'
+Note: At this point you should be connected to Case Wireless to proceed further. In the terminal window on Mobaxterm, you should see the beginning of the command line as connected to the hpc (high performance computing) with a format like '[\<caseID>@hpc3 ~]$'
 
 **Step 4**: Request a gpu (or cpu) cluster node using the following command (or a version of it depending upon your requirements): 
 
@@ -23,7 +27,7 @@ With the above command, you will get the Tesla P100 gpu for a period of 4 hours 
 
 For a summary of resources available on the cluster, visit https://sites.google.com/a/case.edu/hpcc/servers-and-storage/cluster-resources
 
-Once you press return, your request is proceeded and you will see the command line change from '[abc123@hpc3 ~]$' to '[abc123@gpu\<node number> ~]$'
+Once you press return, your request is proceeded and you will see the command line change from '[\<caseID>@hpc3 ~]$' to '[\<caseID>@gpu\<node number> ~]$'
 
 ![windowsstep4.png](https://github.com/gundeep15/tech_support/blob/master/windowsstep4.png)
 
