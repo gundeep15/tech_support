@@ -106,4 +106,4 @@ You are now set to use the cluster gpu on jupyter!!!
 ![macstep3.png](https://github.com/gundeep15/tech_support/blob/master/macstep3.png | width=50)
 
 
-<img src="https://github.com/gundeep15/tech_support/blob/master/macstep3.png" alt="macstep3.png" width="80" height="100">
+<img src="https://github.com/gundeep15/tech_support/blob/master/macstep3.png" alt="macstep3.png" width="800" height="1000">
